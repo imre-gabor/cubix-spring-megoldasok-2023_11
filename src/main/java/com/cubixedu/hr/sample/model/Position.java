@@ -1,8 +1,11 @@
 package com.cubixedu.hr.sample.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Position {
@@ -11,10 +14,10 @@ public class Position {
 	@GeneratedValue
 	private int id;
 	private String name;
-	private Qualification qualification;
+	private Qualification qualification;	
 	
-//	@OneToMany(mappedBy = "position")
-//	private List<Employee> employees;
+	@OneToMany(mappedBy = "position")
+	private List<Employee> employees;
 	
 	
 	public Position() {
